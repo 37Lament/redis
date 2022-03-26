@@ -48,14 +48,14 @@ func publish(channel string,message string)  {
 
 func main()  {
 	err:=initClient()
+	if err != nil {
+		fmt.Println("err is",err)
+	}
+	fmt.Println("OK")
 	x:="test1"
 	message:="hello"
 	subscribe(x)
 	psubscribe(x)
 	publish(x,message)
-	if err != nil {
-		fmt.Println("err is",err)
-	}else{
-		fmt.Println("OK")
-	}
+
 }
